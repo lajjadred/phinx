@@ -1,9 +1,7 @@
 """
 examples/installation_art.py
 -----------------------------
-NEMAF 설치 작품 기본 예제.
 
-관람객 위치 시뮬레이션 → 그리드 갱신 → Φ 계산 → 콘솔 출력.
 실제 작품에서는 ConsoleOutput을 OSC/WebSocket으로 교체.
 
 실행:
