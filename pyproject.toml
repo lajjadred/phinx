@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phinx"
+version = "0.1.0"
+description = "Thermodynamic agent-based simulation for complex systems"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "lajjadred", email = "lajjadred@gmail.com"}]
+requires-python = ">=3.10"
+keywords = [
+    "complex-systems", "agent-based-model", "cellular-automata",
+    "bayesian", "thermodynamics", "game-theory", "fractal"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+fast = ["numba>=0.57"]
+output = ["python-osc>=1.8", "websockets>=11"]
+viz = ["matplotlib>=3.7"]
+dev = ["pytest>=7", "black", "ruff", "mypy", "build", "twine"]
+all = ["phinx[fast,output,viz,dev]"]
+
+[project.urls]
+Homepage = "https://github.com/lajjadred/phinx"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["phinx*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

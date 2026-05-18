@@ -1,0 +1,25 @@
+# 기본 의존성 포함
+-r requirements.txt
+
+# 가속
+numba>=0.57
+
+# 실시간 출력
+python-osc>=1.8
+websockets>=11
+
+# 시각화
+matplotlib>=3.7
+
+# 테스트
+pytest>=7
+pytest-cov
+
+# 코드 품질
+black
+ruff
+mypy
+
+# PyPI 배포
+build
+twine
